@@ -1,0 +1,15 @@
+#main-logo {
+  height: auto;
+  max-width: 300px;
+  margin: auto;
+  display: block;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-image: url('../assets/bg.jpg'); */
+  background-color: rgb(164, 163, 163);
+  background-blend-mode: overlay;
+}
