@@ -1,0 +1,13 @@
+<h2>Respostas</h2>
+<li>
+  <ul *ngFor="let answer of answers">
+    {{answer.answer}} - {{answer.created_at | date: "dd/M/Y hh:mm"}}
+  </ul>
+</li>
+
+<h2>Acessos</h2>
+<li>
+  <ul *ngFor="let access of mapAccess">
+    {{access.accessed_at | date: "dd/M/Y hh:mm"}}
+  </ul>
+</li>
