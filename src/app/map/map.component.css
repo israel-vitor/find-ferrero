@@ -1,0 +1,11 @@
+#map{
+    display: block;
+    margin: auto;
+    padding: 100px;
+}
+
+.map-pin {
+    position: absolute;
+    max-width: 100px;
+    cursor: pointer;
+}
