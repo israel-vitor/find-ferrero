@@ -1,11 +1,65 @@
-#map{
-    display: block;
-    margin: auto;
-    padding: 100px;
+ @media (max-width: 1600px) {
+  #map {
+    left: 250px !important;
+  }
+
+  #bed {
+    left: 320px !important;
+  }
+
+  #tube {
+    left: 450px !important;
+  }
+
+  #mirror {
+    left: 870px !important;
+  }
+
+  #purifier {
+    left: 1220px !important;
+  }
+
+  #pepper {
+    left: 1220px !important;
+  }
+
+}
+
+#map {
+  display: block;
+  margin: auto;
+  position: absolute;
+  left: 350px;
+  top: 60px;
 }
 
 .map-pin {
-    position: absolute;
-    max-width: 100px;
-    cursor: pointer;
+  max-width: 100px;
+  cursor: pointer;
+  position: absolute;
+}
+
+#bed {
+  left: 420px;
+  top: 560px;
+}
+
+#tube {
+  left: 550px;
+  top: 440px;
+}
+
+#mirror {
+  left: 970px;
+  top: 570px;
+}
+
+#purifier {
+  left: 1320px;
+  top: 190px;
+}
+
+#pepper {
+  left: 1320px;
+  top: 100px;
 }
