@@ -1,0 +1,21 @@
+<div *ngIf="!loading">
+  <h3 mat-dialog-title>Dica</h3>
+
+  <div mat-dialog-content id="tip">{{tip}}</div>
+
+  <mat-form-field *ngIf="found">
+    <mat-label>Conta pra mim. Onde tu achou?</mat-label>
+    <input matInput [(ngModel)]="answer" placeholder="Tava no ...">
+  </mat-form-field>
+
+  <button *ngIf="found" mat-raised-button id="answer" (click)="sendAnswer()">Responder</button>
+
+  <div style="margin-top: 30px;" mat-dialog-actions>
+    <button mat-raised-button id="close" (click)="close()">Tá, vou procurar</button>
+    <button mat-raised-button color="primary" *ngIf="!found" (click)="showAnswerField()">Já encontrei</button>
+  </div>
+</div>
+
+<div *ngIf="loading">
+  <h2>Aguarde</h2>
+</div>

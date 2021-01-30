@@ -1,0 +1,20 @@
+#tip {
+  font-weight: 600;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+#answer {
+  background-color: rgb(7, 100, 85);
+  color: white;
+  margin-left: 20px;
+}
+
+#close {
+  background-color: rgb(71, 71, 71);
+  color: white;
+}
+
+mat-form-field {
+  width: 400px;
+}
