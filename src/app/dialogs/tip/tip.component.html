@@ -8,7 +8,8 @@
     <input matInput [(ngModel)]="answer" placeholder="Tava no ...">
   </mat-form-field>
 
-  <button *ngIf="found" mat-raised-button id="answer" (click)="sendAnswer()">Responder</button>
+  <button *ngIf="found" mat-raised-button id="answer" [disabled]="answer.length < 4"
+    (click)="sendAnswer()">Responder</button>
 
   <div style="margin-top: 30px;" mat-dialog-actions>
     <button mat-raised-button id="close" (click)="close()">Tá, vou procurar</button>

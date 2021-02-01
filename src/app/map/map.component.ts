@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { SuccessComponent } from '../dialogs/success/success.component';
 import { TipComponent } from '../dialogs/tip/tip.component';
-import { CoreService } from '../services/core.service';
+import { answer, CoreService } from '../services/core.service';
 
 export interface tipDialogData {
   position: string
@@ -23,17 +22,27 @@ export class MapComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.coreService.readAnswers().subscribe((answers) => {
-    //   if (answers.length === 5) {
-    //     const dialogRef = this.dialog.open(SuccessComponent, {
-    //       width: '700px'
-    //     })
+    this.coreService.readAnswers().subscribe((answers) => {
+      console.log("ok")
+      console.log(answers)
+      if (answers.length >= 5 && this.validatePositions(answers)) {
+        this.router.navigate(['success'])
+      }
+    })
+  }
 
-    //     dialogRef.afterClosed().subscribe((result) => {
-    //       this.router.navigate(['home'])
-    //     });
-    //   }
-    // })
+  private validatePositions(answersList: Array<answer>): boolean {
+    let answersPositions: Array<string> = answersList.map((answer) => {
+      return answer.position
+    });
+    console.log(answersPositions)
+    return (
+      answersPositions.includes('bed') &&
+      answersPositions.includes('tube') &&
+      answersPositions.includes('mirror') &&
+      answersPositions.includes('purifier') &&
+      answersPositions.includes('pepper')
+    )
   }
 
   public openTipDialog(position: string): void {

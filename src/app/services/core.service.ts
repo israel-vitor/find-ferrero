@@ -7,6 +7,7 @@ export interface answer {
   id?: string;
   answer: string;
   created_at: any;
+  position: 'bed' | 'tube' | 'mirror' | 'purifier' | 'pepper';
 }
 
 export interface mapAccess {
@@ -29,10 +30,11 @@ export class CoreService {
     })
   }
 
-  public createAnswer(answer: string): Promise<any> {
+  public createAnswer(answer: string, position: string): Promise<any> {
     return this.angularFirestore.collection(this.answersCollectionName).add({
       "created_at": new Date(),
-      "answer": answer
+      "answer": answer,
+      "position": position
     })
   }
 

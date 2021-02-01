@@ -45,7 +45,7 @@ export class TipComponent implements OnInit {
 
   public sendAnswer(): void {
     this.loading = true;
-    this.coreService.createAnswer(this.answer).finally(() => {
+    this.coreService.createAnswer(this.answer, this.data.position).finally(() => {
       this.dialogRef.close()
     })
   }
